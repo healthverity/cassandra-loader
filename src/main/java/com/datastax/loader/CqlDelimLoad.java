@@ -527,9 +527,9 @@ public class CqlDelimLoad {
             pOpts.setMaxConnectionsPerHost(HostDistance.LOCAL, 8);
             pOpts.setCoreConnectionsPerHost(HostDistance.LOCAL, 8);
             Cluster.Builder clusterBuilder = Cluster.builder()
-                .addContactPoint(host)
+                .addContactPoints(host)
                 .withPort(port)
-                //.withCompression(ProtocolOptions.Compression.LZ4)
+//                .withCompression(ProtocolOptions.Compression.LZ4)
                 .withPoolingOptions(pOpts)
                 .withLoadBalancingPolicy(new TokenAwarePolicy( DCAwareRoundRobinPolicy.builder().build()))
                 ;
